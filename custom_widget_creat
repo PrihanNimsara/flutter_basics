@@ -1,0 +1,65 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:project_one/model/author.dart';
+
+void main() => runApp(MaterialApp(
+      home:MyCustom(),
+    ));
+
+class MyCustom extends StatefulWidget {
+  const MyCustom({Key? key}) : super(key: key);
+
+  @override
+  _MyCustomState createState() => _MyCustomState();
+}
+
+class _MyCustomState extends State<MyCustom> {
+
+  List<Author> myList = [
+    Author(1, "aaaaaaaaa"),
+    Author(2, "bbbbbbbbbbb"),
+    Author(3, "ccccccccc")
+  ];
+
+
+  @override
+  Widget build(BuildContext context) {
+    return  Scaffold(
+      backgroundColor: Colors.green,
+      appBar: AppBar(
+        title: Text('First App'),
+        centerTitle: true,
+        backgroundColor: Colors.black87,
+      ),
+   body: Padding(
+     padding: EdgeInsets.all(5.0),
+     child: Column(
+       crossAxisAlignment: CrossAxisAlignment.start,
+       children: myList.map((myList) => myCustomWidget(myList)).toList(),
+     ),
+   ),
+    );
+  }
+}
+
+Widget myCustomWidget(Author author){
+  return Card(
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+        Text('${author.id.toString()}',
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 20.0
+        ),),
+        SizedBox(
+          height: 20.0,
+        ),
+        Text('${author.name.toString()}')
+      ],
+    ),
+  );
+}
+
+

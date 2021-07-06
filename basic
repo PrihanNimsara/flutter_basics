@@ -1,0 +1,66 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main() => runApp(MaterialApp(
+      home:MyCustom(),
+    ));
+
+class MyCustom extends StatelessWidget {
+  const MyCustom({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return  Scaffold(
+      appBar: AppBar(
+        title: Text('hello'),
+        centerTitle: true,
+        backgroundColor: Colors.deepOrange[800],
+      ),
+      // body: Center(
+      //   // child: Text(
+      //   //   'already existing but seen, experienced, or acquired recently or now for the first time.',
+      //   //   style: TextStyle(
+      //   //     color: Colors.brown,
+      //   //     fontSize: 30.0,
+      //   //     fontWeight: FontWeight.bold,
+      //   //     fontFamily: 'indie',
+      //   //   ),
+      //   // ),
+      //   // child: Image(
+      //   //   // image: NetworkImage('https://asia.olympus-imaging.com/content/000107507.jpg'),
+      //   //   image: AssetImage('assets/me.png'),
+      //   // ),
+      //   // child: Icon(
+      //   //   Icons.bus_alert,
+      //   //   color: Colors.deepOrange,
+      //   //   size: 100.0,
+      //   // ),
+      //   // child: ElevatedButton(
+      //   //   onPressed: (){},
+      //   //   style: ButtonStyle(
+      //   //     backgroundColor: MaterialStateProperty.all(Colors.deepOrange),
+      //   //   ),
+      //   //   child: Text('test'),
+      //   // child: RaisedButton.icon(
+      //   //   onPressed: (){},
+      //   //   icon: Icon(Icons.bus_alert),
+      //   //   label: Text('sss'),
+      //   // ),
+      //   child: IconButton(
+      //     onPressed: (){},
+      //     icon: Icon(Icons.bus_alert),
+      //   ),
+      // ),
+      body: Container(
+        padding: EdgeInsets.all(100.0),
+        margin: EdgeInsets.fromLTRB(20.0, 50.0, 5.0, 10.0),
+        color: Colors.black12,
+        child: Text('hello'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {  },
+        child: Text('click me'),
+      ),
+    );
+  }
+}

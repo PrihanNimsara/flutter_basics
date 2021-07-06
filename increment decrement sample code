@@ -1,0 +1,170 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+
+void main() => runApp(MaterialApp(
+      home:MyCustom(),
+    ));
+
+class MyCustom extends StatefulWidget {
+  const MyCustom({Key? key}) : super(key: key);
+
+  @override
+  _MyCustomState createState() => _MyCustomState();
+}
+
+class _MyCustomState extends State<MyCustom> {
+
+  var x =10;
+
+  @override
+  Widget build(BuildContext context) {
+    return  Scaffold(
+      backgroundColor: Colors.green,
+      appBar: AppBar(
+        title: Text('First App'),
+        centerTitle: true,
+        backgroundColor: Colors.black87,
+      ),
+   body: Padding(
+     padding: EdgeInsets.all(5.0),
+     child: Column(
+       crossAxisAlignment: CrossAxisAlignment.start,
+       children: <Widget>[
+         Text(
+           'Name',
+         style: TextStyle(
+           fontSize: 15.0,
+           color: Colors.black87
+         ),
+         ),
+         SizedBox(
+           height: 5.0,
+         ),
+         Text(
+           'New User',
+           style: TextStyle(
+               fontSize: 20.0,
+               fontWeight: FontWeight.bold,
+               color: Colors.black87
+           ),
+         ),
+         SizedBox(
+           height: 5.0,
+         ),
+         Row(
+           mainAxisAlignment: MainAxisAlignment.end,
+           children: <Widget>[
+             Icon( Icons.accessibility_new,
+             color: Colors.deepPurple,
+             size: 20.0,),
+             Text(
+               'Count',
+               style: TextStyle(
+                   fontSize: 15.0,
+                   color: Colors.black87
+               ),
+             ),
+             SizedBox(width: 15.0),
+             Text(
+               '$x',
+               style: TextStyle(
+                   fontSize: 30.0,
+                   fontWeight: FontWeight.bold,
+                   color: Colors.red
+               ),
+             ),
+           ],
+         )
+       ],
+     ),
+   ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            x += 1;
+          });
+        },
+        child: Text('click me'),
+      ),
+    );
+  }
+}
+
+// class MyNew extends StatefulWidget {
+//   const MyNew({Key? key}) : super(key: key);
+//
+//   @override
+//   _MyNewState createState() => _MyNewState();
+// }
+//
+// class _MyNewState extends State<MyNew> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Colors.green,
+//       appBar: AppBar(
+//         title: Text('First App'),
+//         centerTitle: true,
+//         backgroundColor: Colors.black87,
+//       ),
+//       body: Padding(
+//         padding: EdgeInsets.all(5.0),
+//         child: Column(
+//           crossAxisAlignment: CrossAxisAlignment.start,
+//           children: <Widget>[
+//             Text(
+//               'Name',
+//               style: TextStyle(
+//                   fontSize: 15.0,
+//                   color: Colors.black87
+//               ),
+//             ),
+//             SizedBox(
+//               height: 5.0,
+//             ),
+//             Text(
+//               'New User',
+//               style: TextStyle(
+//                   fontSize: 20.0,
+//                   fontWeight: FontWeight.bold,
+//                   color: Colors.black87
+//               ),
+//             ),
+//             SizedBox(
+//               height: 5.0,
+//             ),
+//             Row(
+//               mainAxisAlignment: MainAxisAlignment.end,
+//               children: <Widget>[
+//                 Icon( Icons.accessibility_new,
+//                   color: Colors.deepPurple,
+//                   size: 20.0,),
+//                 Text(
+//                   'Count',
+//                   style: TextStyle(
+//                       fontSize: 15.0,
+//                       color: Colors.black87
+//                   ),
+//                 ),
+//                 SizedBox(width: 15.0),
+//                 Text(
+//                   '8',
+//                   style: TextStyle(
+//                       fontSize: 30.0,
+//                       fontWeight: FontWeight.bold,
+//                       color: Colors.red
+//                   ),
+//                 ),
+//               ],
+//             )
+//           ],
+//         ),
+//       ),
+//       floatingActionButton: FloatingActionButton(
+//         onPressed: () {  },
+//         child: Text('click me'),
+//       ),
+//     );
+//   }
+// }

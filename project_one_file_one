@@ -1,0 +1,45 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:project_one/model/author.dart';
+
+class MyNewWidget extends StatelessWidget {
+  final Author author;
+  final Function deleteFunction;
+  MyNewWidget({required this.author,required this.deleteFunction});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Text('${author.id.toString()}',
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20.0
+            ),),
+          SizedBox(
+            height: 20.0,
+          ),
+          Text('${author.name.toString()}'),
+          SizedBox(
+            height: 20.0,
+          ),
+          TextButton(
+              onPressed: (){
+               deleteFunction();
+              },
+              child: const Text('Disabled'),
+            style: TextButton.styleFrom(
+              padding: const EdgeInsets.all(16.0),
+              primary: Colors.black87,
+              textStyle: const TextStyle(fontSize: 20),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
